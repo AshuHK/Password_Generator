@@ -9,6 +9,6 @@ def generate_password(size=12):
 def main():
     pass
 
+
 if __name__ == "__main__":
     main()
-
