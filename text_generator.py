@@ -27,13 +27,17 @@ def generate_password(size=16):
     :param size: Integer for the size of the new password
     :return: String to represent the new password
     """
+
+    # generate a basic pool of characters and shuffle it
     chars = string.ascii_uppercase + string.ascii_lowercase + string.punctuation
     chars = shuffle_string(chars)
 
+    # build the new password
     new_password = ""
     while len(new_password) < size:
         new_password += chars[random.randint(0, len(chars) - 1)]
 
+    # shuffs the new password
     new_password = shuffle_string(new_password)
 
     return new_password
