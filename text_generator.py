@@ -8,7 +8,7 @@ def shuffle_string(rand_str):
     return "".join(char_list)
 
 
-def generate_password(size=16): 
+def generate_password(size=16):
     chars = string.ascii_uppercase + string.ascii_lowercase + string.punctuation
     chars = shuffle_string(chars)
 
