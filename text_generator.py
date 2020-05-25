@@ -1,5 +1,6 @@
 import random
 import string
+import pyperclip # for getting the password onto a clipboard
 
 
 def shuffle_string(some_str):
@@ -51,6 +52,8 @@ def main():
         new_password = generate_password()
 
     print("Your new password is: {}\n".format(new_password))
+    print("Copied onto your clipboard :)\n")
+    pyperclip.copy(new_password)
 
 
 if __name__ == "__main__":
