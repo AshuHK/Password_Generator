@@ -4,28 +4,28 @@ import string
 
 def shuffle_string(some_str):
     """
-    Shuffles the given string and return it 
-    
-    :param some_str: String of characters to be shuffled in a random order 
-    :return: String of the same characters in a random order 
+    Shuffles the given string and return it
+
+    :param some_str: String of characters to be shuffled in a random order
+    :return: String of the same characters in a random order
     """
-    
-    # turn the string into a list of strings 
+
+    # turn the string into a list of strings
     char_list = list(some_str)
 
     # shuffle the list using random
     random.shuffle(char_list)
 
-    # combine the list and return the string 
+    # combine the list and return the string
     return "".join(char_list)
 
 
 def generate_password(size=16):
     """
-    Generates a new password with a given size 
+    Generates a new password with a given size
 
-    :param size: Integer for the size of the new password 
-    :return: String to represent the new password 
+    :param size: Integer for the size of the new password
+    :return: String to represent the new password
     """
     chars = string.ascii_uppercase + string.ascii_lowercase + string.punctuation
     chars = shuffle_string(chars)
