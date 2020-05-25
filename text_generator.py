@@ -45,12 +45,12 @@ def generate_password(size=16):
 
 def main():
     try:
-        size = int(input("Enter the size of the password: "))
+        size = int(input("\nEnter the size of the password: "))
         new_password = generate_password(size)
     except ValueError:
         new_password = generate_password()
 
-    print("Your new password is: {}".format(new_password))
+    print("Your new password is: {}\n".format(new_password))
 
 
 if __name__ == "__main__":
