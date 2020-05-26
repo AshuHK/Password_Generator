@@ -23,6 +23,12 @@ def shuffle_string(some_str):
     return "".join(char_list)
 
 
+def update_file(password): 
+    file_obj = open("passwords.txt", "a") 
+    file_obj.write(password) 
+    file_obj.close()
+
+
 def get_data(password):
     lower = upper = digits = special = 0
 
@@ -93,8 +99,12 @@ def main():
     print("Number of decimal numbers     : {}".format(digits))
     print("Number of special characters  : {}\n".format(special))
 
-    print("Copied onto your clipboard :)\n")
     pyperclip.copy(new_password)
+
+    update_file(new_password)
+
+    print("Updated passwords.txt")
+    print("Copied onto your clipboard :)\n")
 
 
 if __name__ == "__main__":
