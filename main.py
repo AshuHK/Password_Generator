@@ -25,7 +25,7 @@ def shuffle_string(some_str):
 
 def update_file(password): 
     file_obj = open("passwords.txt", "a") 
-    file_obj.write(password) 
+    file_obj.write("{}\n".format(password)) 
     file_obj.close()
 
 
