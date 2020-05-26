@@ -24,12 +24,20 @@ def get_data(password):
     lower = upper = digits = special = 0 
 
     for i in range(len(password)): 
+
+        # if the character is lowercase 
         if password[i].islower(): 
             lower += 1 
+
+        # if the character is uppercase 
         elif password[i].isupper(): 
             upper += 1 
+
+        # if the character is a number 
         elif password[i].isdigit(): 
             digits += 1 
+
+        # if the character is punctuation 
         else: 
             special += 1 
 
