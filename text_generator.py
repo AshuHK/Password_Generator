@@ -21,7 +21,17 @@ def shuffle_string(some_str):
     return "".join(char_list)
 
 def get_data(password): 
-    lower = upper = special = digits = 0 
+    lower = upper = digits = special = 0 
+
+    for i in range(len(password)): 
+        if password[i].islower(): 
+            lower += 1 
+        elif password[i].isupper(): 
+            upper += 1 
+        elif password[i].isdigit(): 
+            digits += 1 
+        else: 
+            special += 1 
 
     return (lower, upper, special, digits)
 
@@ -58,7 +68,7 @@ def main():
 
     print("Your new password is: {}\n".format(new_password))
 
-    lower, upper, special, digits = get_data(new_password)
+    lower, upper, digits, special = get_data(new_password)
 
     print("Copied onto your clipboard :)\n")
     pyperclip.copy(new_password)
