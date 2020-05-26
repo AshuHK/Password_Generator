@@ -20,6 +20,10 @@ def shuffle_string(some_str):
     # combine the list and return the string
     return "".join(char_list)
 
+def get_data(password): 
+    lower = upper = special = digits = 0 
+
+    return (lower, upper, special, digits)
 
 def generate_password(size=16):
     """
@@ -30,7 +34,8 @@ def generate_password(size=16):
     """
 
     # generate a basic pool of characters and shuffle it
-    chars = string.ascii_uppercase + string.ascii_lowercase + string.punctuation
+    chars = string.ascii_uppercase + string.ascii_lowercase + string.punctuation + string.digits
+
     chars = shuffle_string(chars)
 
     # build the new password
@@ -52,6 +57,9 @@ def main():
         new_password = generate_password()
 
     print("Your new password is: {}\n".format(new_password))
+
+    lower, upper, special, digits = get_data(new_password)
+
     print("Copied onto your clipboard :)\n")
     pyperclip.copy(new_password)
 
