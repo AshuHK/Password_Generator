@@ -1,7 +1,7 @@
 import random
 import string
 
-# for getting the password onto a clipboard
+# for getting the password onto the clipboard
 import pyperclip
 
 
