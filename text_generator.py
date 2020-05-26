@@ -33,7 +33,7 @@ def get_data(password):
         else: 
             special += 1 
 
-    return (lower, upper, special, digits)
+    return (lower, upper, digits, special)
 
 def generate_password(size=16):
     """
@@ -69,6 +69,12 @@ def main():
     print("Your new password is: {}\n".format(new_password))
 
     lower, upper, digits, special = get_data(new_password)
+
+    print("--------- Password Data ---------")
+    print("Number of lowercase characters: {}".format(lower))
+    print("Number of uppercase characters: {}".format(upper))
+    print("Number of decimal numbers     : {}".format(digits))
+    print("Number of special characters  : {}\n".format(special))
 
     print("Copied onto your clipboard :)\n")
     pyperclip.copy(new_password)
