@@ -33,7 +33,7 @@ def generate_password():
 
     new_password = shuffle_string(new_password)
     pyperclip.copy(new_password)
-    
+
     # print(new_password)
 
 
