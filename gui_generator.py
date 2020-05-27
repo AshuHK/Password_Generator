@@ -6,7 +6,9 @@ import pyperclip
 
 
 def shuffle_string(some_str):
-    pass
+    char_list = list(some_str) 
+    random.shuffle(char_list)
+    return "".join(char_list)
 
 
 def generate_password():
@@ -30,6 +32,9 @@ def generate_password():
         new_password += chars[random.randint(0, len(chars) - 1)]
 
     new_password = shuffle_string(new_password)
+    pyperclip.copy(new_password)
+    
+    # print(new_password)
 
 
 root = Tk()
