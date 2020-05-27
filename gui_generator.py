@@ -6,7 +6,7 @@ import pyperclip
 
 
 def shuffle_string(some_str):
-    char_list = list(some_str) 
+    char_list = list(some_str)
     random.shuffle(char_list)
     return "".join(char_list)
 
@@ -25,10 +25,10 @@ def generate_password():
         + string.punctuation
     )
 
-    chars = shuffle_string(chars) 
+    chars = shuffle_string(chars)
 
     new_password = ""
-    while len(new_password) < size: 
+    while len(new_password) < size:
         new_password += chars[random.randint(0, len(chars) - 1)]
 
     new_password = shuffle_string(new_password)
@@ -37,7 +37,9 @@ def generate_password():
     password_dest.delete(0, END)
     password_dest.insert(0, new_password)
 
-    Label(root, text="Copied to Clipboard :)", bg="white").place(relx=.5, rely=.6, anchor=CENTER)
+    Label(root, text="Copied to Clipboard :)", bg="white").place(
+        relx=0.5, rely=0.6, anchor=CENTER
+    )
 
 
 root = Tk()
