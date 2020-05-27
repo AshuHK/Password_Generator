@@ -44,7 +44,6 @@ def generate_password():
         + string.digits
         + string.punctuation
     )
-
     chars = shuffle_string(chars)
 
     new_password = ""
@@ -52,6 +51,7 @@ def generate_password():
         new_password += chars[random.randint(0, len(chars) - 1)]
 
     new_password = shuffle_string(new_password)
+
     update_file(new_password)
     pyperclip.copy(new_password)
 
