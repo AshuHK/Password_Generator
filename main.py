@@ -23,13 +23,25 @@ def shuffle_string(some_str):
     return "".join(char_list)
 
 
-def update_file(password): 
-    file_obj = open("passwords.txt", "a") 
-    file_obj.write("{}\n".format(password)) 
+def update_file(password):
+    """
+    Updates (or creates) passwords.txt with the newest password
+
+    :param password: String for the new password
+    """
+    file_obj = open("passwords.txt", "a")
+    file_obj.write("{}\n".format(password))
     file_obj.close()
 
 
 def get_data(password):
+    """
+    Gets data on the newst password and returns it into a tuple of integers
+
+    :param password: String for the new password
+
+    :return: Tuple of integers for the number of uppercase, lowercase, numbers, and punctuation characters in the password
+    """
     lower = upper = digits = special = 0
 
     for i in range(len(password)):
