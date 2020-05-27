@@ -11,6 +11,12 @@ def shuffle_string(some_str):
     return "".join(char_list)
 
 
+def update_file(password):
+    file_obj = open("passwords.txt", "a")
+    file_obj.write("{}\n".format(password))
+    file_obj.close()
+
+
 def generate_password():
     size_input = size_entry.get()
     if size_input.strip().isdigit():
@@ -32,12 +38,13 @@ def generate_password():
         new_password += chars[random.randint(0, len(chars) - 1)]
 
     new_password = shuffle_string(new_password)
+    update_file(new_password)
     pyperclip.copy(new_password)
 
     password_dest.delete(0, END)
     password_dest.insert(0, new_password)
 
-    Label(root, text="Copied to Clipboard :)", bg="white").place(
+    Label(root, text="Updated passwords.txt\nCopied to Clipboard :)", bg="white").place(
         relx=0.5, rely=0.6, anchor=CENTER
     )
 
