@@ -42,7 +42,7 @@ def generate_password():
 
 root = Tk()
 root.title("Random Password Generator")
-root.maxsize(400, 150)
+root.maxsize(350, 150)
 root.configure(bg="white")
 
 # label for the password
