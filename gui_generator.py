@@ -34,12 +34,15 @@ def generate_password():
     new_password = shuffle_string(new_password)
     pyperclip.copy(new_password)
 
-    # print(new_password)
+    password_dest.delete(0, END)
+    password_dest.insert(0, new_password)
+
+    Label(root, text="Copied to Clipboard :)", bg="white").place(relx=.5, rely=.6, anchor=CENTER)
 
 
 root = Tk()
 root.title("Random Password Generator")
-root.maxsize(300, 150)
+root.maxsize(400, 150)
 root.configure(bg="white")
 
 # label for the password
@@ -60,7 +63,7 @@ generate_button = Button(
     highlightbackground="red",
     command=generate_password,
 )
-generate_button.place(relx=0.5, rely=0.7, anchor=CENTER)
+generate_button.place(relx=0.5, rely=0.8, anchor=CENTER)
 
 # where the password goes
 Label(root, text="Password: ", bg="white").grid(row=2, column=0, padx=5, pady=5)
