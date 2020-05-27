@@ -1,7 +1,5 @@
 import random
 import string
-
-# for getting the password onto the clipboard
 import pyperclip
 
 
@@ -25,7 +23,7 @@ def shuffle_string(some_str):
 
 def update_file(password):
     """
-    Updates (or creates) passwords.txt with the newest password
+    Updates (or creates if needed) passwords.txt with the newest password
 
     :param password: String for the new password
     """
@@ -112,7 +110,6 @@ def main():
     print("Number of special characters  : {}\n".format(special))
 
     pyperclip.copy(new_password)
-
     update_file(new_password)
 
     print("Updated passwords.txt")
