@@ -23,6 +23,14 @@ def generate_password():
         + string.punctuation
     )
 
+    chars = shuffle_string(chars) 
+
+    new_password = ""
+    while len(new_password) < size: 
+        new_password += chars[random.randint(0, len(chars) - 1)]
+
+    new_password = shuffle_string(new_password)
+
 
 root = Tk()
 root.title("Random Password Generator")
