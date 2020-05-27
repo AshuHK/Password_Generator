@@ -1,2 +1,2 @@
 # Password_Generator
-A simple random password generator in Python
+A Simple Random Password Generator in Python
