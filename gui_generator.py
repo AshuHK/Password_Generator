@@ -76,7 +76,6 @@ generate_button.place(relx=0.5, rely=0.8, anchor=CENTER)
 
 # where the password goes
 Label(root, text="Password: ", bg="white").grid(row=2, column=0, padx=5, pady=5)
-
 password_dest = Entry(root)
 password_dest.grid(row=2, column=1, padx=5, pady=5)
 
