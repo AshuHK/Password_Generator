@@ -7,10 +7,9 @@ import pyperclip
 
 def shuffle_string(some_str):
     """
-    Shuffle a string and return it 
+    Shuffle a string and return it
 
-    :param some_str: String where the string is shuffled 
-    
+    :param some_str: String where the string is shuffled
     :return: String of the same characters but shuffled
     """
     char_list = list(some_str)
@@ -20,7 +19,7 @@ def shuffle_string(some_str):
 
 def update_file(password):
     """
-    Update (or create if necessary) a file to store the most recent passwords 
+    Update (or create if necessary) a file to store the most recent passwords
 
     :param password: String of the password to add to the file
     """
@@ -31,7 +30,7 @@ def update_file(password):
 
 def generate_password():
     """
-    Generate and displays the randomly generated password 
+    Generate and displays the randomly generated password
     """
     size_input = size_entry.get()
     if size_input.strip().isdigit():
@@ -63,7 +62,8 @@ def generate_password():
         relx=0.5, rely=0.6, anchor=CENTER
     )
 
-# set up the basic parameters for the window 
+
+# set up the basic parameters for the window
 root = Tk()
 root.title("Random Password Generator")
 root.maxsize(350, 150)
