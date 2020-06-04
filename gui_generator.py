@@ -45,7 +45,7 @@ def print_strength(new_password):
         elif char in string.punctuation:
             score += 7
 
-    # give a category for the password
+    # give a category and color for the password
     if 0 <= score <= 33:
         pass_type = "weak"
         color = "red"
