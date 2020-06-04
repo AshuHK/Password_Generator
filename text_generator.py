@@ -100,8 +100,8 @@ def print_strength(new_password):
     :param new_password: string for the generated password
     """
     score = 0
-    
-    # add up the scores for the password 
+
+    # add up the scores for the password
     for char in new_password:
         if char in string.ascii_letters:
             score += 2
