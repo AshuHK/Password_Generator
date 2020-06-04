@@ -27,6 +27,39 @@ def update_file(password):
     file_obj.write("{}\n".format(password))
     file_obj.close()
 
+def print_strength(new_password):
+    """
+    Calculates and prints the strength of the password
+
+    :param new_password: string for the generated password
+    """
+    score = 0
+    
+    # add up the scores for the password 
+    for char in new_password:
+        if char in string.ascii_letters:
+            score += 2
+        elif char in string.digits:
+            score += 5
+        elif char in string.punctuation:
+            score += 7
+
+    # give a category for the password
+    if 0 <= score <= 33:
+        pass_type = "weak"
+        color = "red"
+    elif 33 < score <= 66:
+        pass_type = "average"
+        color = "yellow"
+    else:
+        pass_type = "strong"
+        color = "green"
+
+    Label(root, text="{}%: This is a {} password".format(score,pass_type), bg=color).place(
+        relx=0.5, rely=0.4, anchor=CENTER
+    )
+
+    return None
 
 def generate_password():
     """
@@ -58,6 +91,8 @@ def generate_password():
     password_dest.delete(0, END)
     password_dest.insert(0, new_password)
 
+    print_strength(new_password)
+
     Label(root, text="Updated passwords.txt\nCopied to Clipboard :)", bg="white").place(
         relx=0.5, rely=0.6, anchor=CENTER
     )
@@ -66,7 +101,7 @@ def generate_password():
 # set up the basic parameters for the window
 root = Tk()
 root.title("Random Password Generator")
-root.maxsize(350, 150)
+root.maxsize(350, 250)
 root.configure(bg="white")
 
 # label for the password
