@@ -50,7 +50,7 @@ def print_strength(new_password):
         pass_type = "weak"
         color = "red"
     elif 33 < score <= 66:
-        pass_type = "average"
+        pass_type = "normal"
         color = "yellow"
     else:
         pass_type = "strong"
