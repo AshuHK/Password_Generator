@@ -27,6 +27,7 @@ def update_file(password):
     file_obj.write("{}\n".format(password))
     file_obj.close()
 
+
 def print_strength(new_password):
     """
     Calculates and prints the strength of the password
@@ -34,8 +35,8 @@ def print_strength(new_password):
     :param new_password: string for the generated password
     """
     score = 0
-    
-    # add up the scores for the password 
+
+    # add up the scores for the password
     for char in new_password:
         if char in string.ascii_letters:
             score += 2
@@ -55,11 +56,12 @@ def print_strength(new_password):
         pass_type = "strong"
         color = "green"
 
-    Label(root, text="{}%: This is a {} password".format(score,pass_type), bg=color).place(
-        relx=0.5, rely=0.4, anchor=CENTER
-    )
+    Label(
+        root, text="{}%: This is a {} password".format(score, pass_type), bg=color
+    ).place(relx=0.5, rely=0.4, anchor=CENTER)
 
     return None
+
 
 def generate_password():
     """
