@@ -30,6 +30,7 @@ def update_file(password):
     file_obj = open("passwords.txt", "a")
     file_obj.write("{}\n".format(password))
     file_obj.close()
+    return None
 
 
 def get_data(password):
@@ -92,6 +93,36 @@ def generate_password(size=16):
     return new_password
 
 
+def print_strength(new_password):
+    """
+    Calculates and prints the strength of the password
+
+    :param new_password: string for the generated password
+    """
+    score = 0
+
+    for char in new_password:
+        if char in string.ascii_letters:
+            score += 2
+        elif char in string.digits:
+            score += 5
+        elif char in string.punctuation:
+            score += 7
+
+    score /= 100
+
+    if 0 <= score <= 0.33:
+        pass_type = "weak"
+    elif 0.33 < score <= 0.66:
+        pass_type = "average"
+    else:
+        pass_type = "strong"
+
+    print("{:2f} %: This is a {} password\n".format(score * 100, pass_type))
+
+    return None
+
+
 def main():
     try:
         size = int(input("\nEnter the size of the password: "))
@@ -111,6 +142,7 @@ def main():
 
     pyperclip.copy(new_password)
     update_file(new_password)
+    print_strength(new_password)
 
     print("Updated passwords.txt")
     print("Copied onto your clipboard :)\n")
