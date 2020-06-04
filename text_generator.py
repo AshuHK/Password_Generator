@@ -109,16 +109,14 @@ def print_strength(new_password):
         elif char in string.punctuation:
             score += 7
 
-    score /= 100
-
-    if 0 <= score <= 0.33:
+    if 0 <= score <= 33:
         pass_type = "weak"
-    elif 0.33 < score <= 0.66:
+    elif 33 < score <= 66:
         pass_type = "average"
     else:
         pass_type = "strong"
 
-    print("{:2f} %: This is a {} password\n".format(score * 100, pass_type))
+    print("{}%: This is a {} password\n".format(score, pass_type))
 
     return None
 
